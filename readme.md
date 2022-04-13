@@ -1,0 +1,3 @@
+## EnumBitmask
+
+Kotlin Enum Bitmask
