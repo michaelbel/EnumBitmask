@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EnumBitmask</string>
+    <string name="see_also">See BitMaskUnitTest class</string>
 </resources>
