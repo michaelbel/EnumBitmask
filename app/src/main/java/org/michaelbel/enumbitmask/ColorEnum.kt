@@ -1,7 +1,7 @@
 package org.michaelbel.enumbitmask
 
 enum class ColorEnum(
-    override val bit: Long
+    override val bit: Int
 ): Flags {
     TRANSPARENT(0),   // 0
     WHITE(1 shl 0),   // 1
@@ -15,4 +15,16 @@ enum class ColorEnum(
     BROWN(1 shl 8),   // 256
     GRAY(1 shl 9),    // 512
     PURPLE(1 shl 10); // 1024
+
+    companion object {
+        fun find(bit: Int): ColorEnum {
+            return requireNotNull(values().find { colorEnum: ColorEnum -> colorEnum.bit == bit })
+        }
+    }
 }
+
+val Int.isWhite: Boolean
+    get() = BitMask(this) hasFlag ColorEnum.WHITE
+
+val Int.isBlack: Boolean
+    get() = BitMask(this) hasFlag ColorEnum.BLACK
