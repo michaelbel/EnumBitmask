@@ -18,7 +18,7 @@ enum class ColorEnum(
 
     companion object {
         fun find(bit: Int): ColorEnum {
-            return requireNotNull(values().find { colorEnum: ColorEnum -> colorEnum.bit == bit })
+            return requireNotNull(entries.find { colorEnum: ColorEnum -> colorEnum.bit == bit })
         }
     }
 }
