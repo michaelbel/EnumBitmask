@@ -1,0 +1,32 @@
+[
+  {
+    "avatar": "avatar1",
+    "name": "Jane Yang",
+    "badges": 125
+  },
+  {
+    "avatar": "avatar2",
+    "name": "Zak Lewis",
+    "badges": 74
+  },
+  {
+    "avatar": "avatar3",
+    "name": "Haylie Santiago",
+    "badges": 115
+  },
+  {
+    "avatar": "avatar4",
+    "name": "Andrew Martin",
+    "badges": 72
+  },
+  {
+    "avatar": "avatar5",
+    "name": "Emma Griffiths",
+    "badges": 1
+  },
+  {
+    "avatar": "avatar6",
+    "name": "Joe Jackson",
+    "badges": 0
+  }
+]

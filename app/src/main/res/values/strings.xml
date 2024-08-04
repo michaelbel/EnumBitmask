@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">EnumBitmask</string>
-    <string name="see_also">See BitMaskUnitTest class</string>
+    <string name="filter">Filter</string>
+    <string name="filter_verified">Verified Users</string>
 </resources>
