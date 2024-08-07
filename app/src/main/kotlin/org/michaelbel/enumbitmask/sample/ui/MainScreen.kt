@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.displayCutoutPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FabPosition
@@ -23,6 +24,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -62,17 +64,19 @@ fun MainScreen(
                 Row(
                     modifier = Modifier
                         .padding(top = 8.dp)
+                        .clip(RoundedCornerShape(4.dp))
                         .clickable { verifiedFilterEnabled = !verifiedFilterEnabled },
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Checkbox(
                         checked = verifiedFilterEnabled,
-                        onCheckedChange = null
+                        onCheckedChange = null,
+                        modifier = Modifier.padding(start = 4.dp, top = 4.dp, bottom = 4.dp)
                     )
 
                     Text(
                         text = stringResource(R.string.filter_verified),
-                        modifier = Modifier.padding(start = 8.dp)
+                        modifier = Modifier.padding(start = 8.dp, end = 4.dp)
                     )
                 }
             }
