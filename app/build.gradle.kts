@@ -24,13 +24,6 @@ android {
         setProperty("archivesBaseName", "EnumBitmask-v$versionName($versionCode)")
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
-
     buildFeatures {
         compose = true
     }
