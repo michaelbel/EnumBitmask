@@ -22,8 +22,8 @@ import org.michaelbel.enumbitmask.sample.ui.theme.AppTheme
 
 @Composable
 fun UserBox(
-    modifier: Modifier = Modifier,
-    user: User
+    user: User,
+    modifier: Modifier = Modifier
 ) {
     Row(
         modifier = modifier
