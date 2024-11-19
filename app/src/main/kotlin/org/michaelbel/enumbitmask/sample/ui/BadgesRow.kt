@@ -44,8 +44,7 @@ fun BadgesRow(
             Icon(
                 painter = painterResource(R.drawable.ic_badge_verified),
                 contentDescription = null,
-                modifier = Modifier
-                    .size(24.dp),
+                modifier = Modifier.size(24.dp),
                 tint = MaterialTheme.colorScheme.blue
             )
         }
@@ -54,8 +53,7 @@ fun BadgesRow(
             Icon(
                 painter = painterResource(R.drawable.ic_badge_old),
                 contentDescription = null,
-                modifier = Modifier
-                    .size(24.dp),
+                modifier = Modifier.size(24.dp),
                 tint = MaterialTheme.colorScheme.brown
             )
         }
@@ -64,8 +62,7 @@ fun BadgesRow(
             Icon(
                 painter = painterResource(R.drawable.ic_badge_new),
                 contentDescription = null,
-                modifier = Modifier
-                    .size(24.dp),
+                modifier = Modifier.size(24.dp),
                 tint = MaterialTheme.colorScheme.green
             )
         }
@@ -74,8 +71,7 @@ fun BadgesRow(
             Icon(
                 painter = painterResource(R.drawable.ic_badge_star),
                 contentDescription = null,
-                modifier = Modifier
-                    .size(24.dp),
+                modifier = Modifier.size(24.dp),
                 tint = MaterialTheme.colorScheme.yellow
             )
         }
@@ -84,8 +80,7 @@ fun BadgesRow(
             Icon(
                 painter = painterResource(R.drawable.ic_badge_crown),
                 contentDescription = null,
-                modifier = Modifier
-                    .size(24.dp),
+                modifier = Modifier.size(24.dp),
                 tint = MaterialTheme.colorScheme.purple
             )
         }
@@ -94,8 +89,7 @@ fun BadgesRow(
             Icon(
                 painter = painterResource(R.drawable.ic_badge_heart),
                 contentDescription = null,
-                modifier = Modifier
-                    .size(24.dp),
+                modifier = Modifier.size(24.dp),
                 tint = MaterialTheme.colorScheme.red
             )
         }
@@ -104,8 +98,7 @@ fun BadgesRow(
             Icon(
                 painter = painterResource(R.drawable.ic_badge_rich),
                 contentDescription = null,
-                modifier = Modifier
-                    .size(24.dp),
+                modifier = Modifier.size(24.dp),
                 tint = MaterialTheme.colorScheme.amber
             )
         }

@@ -50,8 +50,7 @@ fun UserBox(
         )
 
         BadgesRow(
-            modifier = Modifier
-                .padding(start = 8.dp, end = 16.dp),
+            modifier = Modifier.padding(start = 8.dp, end = 16.dp),
             badges = user.badges
         )
     }

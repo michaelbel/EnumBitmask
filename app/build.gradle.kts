@@ -33,7 +33,6 @@ android {
         targetSdk = libs.versions.target.sdk.get().toInt()
         versionName = "1.0.0"
         versionCode = gitCommitsCount
-        setProperty("archivesBaseName", "EnumBitmask-v$versionName($versionCode)")
     }
 
     buildFeatures {
@@ -52,6 +51,10 @@ dependencies {
     implementation(libs.google.material)
     debugImplementation(libs.androidx.compose.ui.tooling)
     testImplementation(libs.junit)
+}
+
+base {
+    archivesName.set("EnumBitmask-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})")
 }
 
 tasks.register("printVersionName") {
