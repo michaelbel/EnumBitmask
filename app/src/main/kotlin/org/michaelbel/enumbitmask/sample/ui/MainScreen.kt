@@ -32,6 +32,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import org.michaelbel.enumbitmask.R
 import org.michaelbel.enumbitmask.sample.MainViewModel
+import org.michaelbel.enumbitmask.sample.domain.User
 import org.michaelbel.enumbitmask.sample.domain.isVerified
 
 @Composable
@@ -88,9 +89,14 @@ fun MainScreen(
                 .padding(innerPadding)
                 .then(if (isPortrait) Modifier else Modifier.displayCutoutPadding())
         ) {
-            items(usersList.filter { if (verifiedFilterEnabled) it.badges.isVerified else true }) { user ->
+            val users = usersList.filter { if (verifiedFilterEnabled) it.badges.isVerified else true }
+            items(
+                items = users,
+                key = User::name
+            ) { user ->
                 UserBox(
-                    user = user
+                    user = user,
+                    modifier = Modifier.animateItem()
                 )
             }
         }
