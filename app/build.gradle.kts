@@ -40,6 +40,10 @@ android {
     }
 }
 
+base {
+    archivesName.set("EnumBitmask-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})")
+}
+
 dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.activity.compose)
@@ -51,10 +55,6 @@ dependencies {
     implementation(libs.google.material)
     debugImplementation(libs.androidx.compose.ui.tooling)
     testImplementation(libs.junit)
-}
-
-base {
-    archivesName.set("EnumBitmask-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})")
 }
 
 tasks.register("printVersionName") {
