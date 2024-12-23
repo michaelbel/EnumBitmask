@@ -6,8 +6,10 @@ import android.content.res.Configuration
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.displayCutoutPadding
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.displayCutout
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -20,7 +22,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -33,18 +35,17 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import org.michaelbel.enumbitmask.R
 import org.michaelbel.enumbitmask.sample.MainViewModel
 import org.michaelbel.enumbitmask.sample.domain.User
-import org.michaelbel.enumbitmask.sample.domain.isVerified
 
 @Composable
 fun MainScreen(
     viewModel: MainViewModel = viewModel()
 ) {
-    val usersList by viewModel.usersListFlow.collectAsStateWithLifecycle()
-
+    var verifiedFilterEnabled by rememberSaveable { mutableStateOf(false) }
+    val usersList by viewModel.filteredUsersStateFlow(verifiedFilterEnabled).collectAsStateWithLifecycle()
     val isPortrait = LocalConfiguration.current.orientation == Configuration.ORIENTATION_PORTRAIT
-    var verifiedFilterEnabled by remember { mutableStateOf(false) }
 
     Scaffold(
+        modifier = Modifier.windowInsetsPadding(WindowInsets.displayCutout),
         topBar = {
             TopAppBar(
                 title = {
@@ -85,13 +86,10 @@ fun MainScreen(
         floatingActionButtonPosition = if (isPortrait) FabPosition.Center else FabPosition.End
     ) { innerPadding ->
         LazyColumn(
-            modifier = Modifier
-                .padding(innerPadding)
-                .then(if (isPortrait) Modifier else Modifier.displayCutoutPadding())
+            modifier = Modifier.padding(innerPadding)
         ) {
-            val users = usersList.filter { if (verifiedFilterEnabled) it.badges.isVerified else true }
             items(
-                items = users,
+                items = usersList,
                 key = User::name
             ) { user ->
                 UserBox(
