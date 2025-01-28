@@ -14,7 +14,7 @@
         tools:ignore="UnusedAttribute">
 
         <activity
-            android:name="org.michaelbel.enumbitmask.sample.MainActivity"
+            android:name=".sample.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
