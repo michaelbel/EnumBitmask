@@ -21,7 +21,7 @@ object UserMapper {
             "avatar4" -> R.drawable.ic_avatar_4
             "avatar5" -> R.drawable.ic_avatar_5
             "avatar6" -> R.drawable.ic_avatar_6
-            else -> error("empty avatar")
+            else -> error("Empty avatar")
         }
     }
 }
