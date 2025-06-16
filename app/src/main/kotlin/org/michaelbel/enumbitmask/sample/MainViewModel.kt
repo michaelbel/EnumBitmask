@@ -26,7 +26,7 @@ class MainViewModel(
 ): AndroidViewModel(application) {
 
     private val usersListFlow: Flow<List<User>> = flow {
-        val users = withContext(Dispatchers.IO) {
+        val users = withContext(Dispatchers.Default) {
             application.applicationContext.assets.open(ASSETS_FILE_NAME).use { inputStream ->
                 val format = Json { ignoreUnknownKeys = true }
                 val usersJsonData: List<UserResponse> = format.decodeFromStream(inputStream)
