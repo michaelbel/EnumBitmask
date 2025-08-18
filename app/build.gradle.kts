@@ -39,6 +39,21 @@ android {
         versionName = "1.0.0"
     }
 
+    signingConfigs {
+        getByName("debug") {
+            keyAlias = "enumbitmask"
+            keyPassword = "password"
+            storeFile = rootProject.file("config/debug-key.jks")
+            storePassword = "password"
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig = signingConfigs.getByName("debug")
+        }
+    }
+
     buildFeatures {
         compose = true
     }
@@ -61,5 +76,9 @@ dependencies {
     testImplementation(libs.junit)
 }
 
-tasks.register("printVersionName") { doLast { println(android.defaultConfig.versionName) } }
-tasks.register("printVersionCode") { doLast { println(android.defaultConfig.versionCode.toString()) } }
+tasks.register("printVersion") {
+    doLast {
+        println("VERSION_NAME=${android.defaultConfig.versionName}")
+        println("VERSION_CODE=${android.defaultConfig.versionCode}")
+    }
+}
