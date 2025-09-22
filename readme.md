@@ -9,5 +9,5 @@ EnumBitmask is an application that demonstrates how to work with bitmasks in a t
 This project uses images from the [Figma Community File](https://www.figma.com/community/file/1278238556561592696).
 
 <div>
-    <img src=".github/pics/app.gif" width="33%" alt="App Video">
+    <img src=".github/app.gif" width="33%" alt="App Video">
 </div>
