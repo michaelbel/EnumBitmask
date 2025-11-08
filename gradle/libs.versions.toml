@@ -11,7 +11,7 @@ androidx-activity = "1.11.0"
 androidx-compose-material3 = "1.4.0"
 androidx-compose-runtime = "1.9.4"
 androidx-compose-ui = "1.9.4"
-androidx-core-splashscreen = "1.0.1"
+androidx-core-splashscreen = "1.2.0"
 androidx-lifecycle = "2.9.4"
 junit = "4.13.2"
 
