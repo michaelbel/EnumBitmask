@@ -105,7 +105,7 @@ fun BadgesRow(
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun BadgesRowPreview() {
     AppTheme {

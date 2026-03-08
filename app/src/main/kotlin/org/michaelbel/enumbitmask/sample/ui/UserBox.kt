@@ -56,7 +56,7 @@ fun UserBox(
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun UserBoxPreview() {
     AppTheme {
