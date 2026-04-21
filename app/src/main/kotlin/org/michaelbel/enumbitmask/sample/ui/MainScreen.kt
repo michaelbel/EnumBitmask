@@ -3,6 +3,7 @@
 package org.michaelbel.enumbitmask.sample.ui
 
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.displayCutout
@@ -57,6 +58,7 @@ fun MainScreen(
                 onClick = { verifiedFilterEnabled = !verifiedFilterEnabled }
             ) {
                 Row(
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Checkbox(
@@ -65,8 +67,7 @@ fun MainScreen(
                     )
 
                     Text(
-                        text = stringResource(R.string.filter_verified),
-                        modifier = Modifier.padding(start = 8.dp)
+                        text = stringResource(R.string.filter_verified)
                     )
                 }
             }

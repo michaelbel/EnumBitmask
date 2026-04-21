@@ -1,6 +1,7 @@
 package org.michaelbel.enumbitmask.sample.ui
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -28,29 +29,27 @@ fun UserBox(
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .height(64.dp),
+            .height(64.dp)
+            .padding(horizontal = 16.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Image(
             painter = painterResource(UserMapper.mapAvatar(user.avatar)),
             contentDescription = null,
             modifier = Modifier
-                .padding(start = 16.dp)
                 .size(56.dp)
                 .clip(CircleShape)
         )
 
         Text(
             text = user.name,
+            modifier = Modifier.weight(weight = 1F, fill = false),
             overflow = TextOverflow.Ellipsis,
-            maxLines = 1,
-            modifier = Modifier
-                .padding(start = 8.dp)
-                .weight(weight = 1F, fill = false)
+            maxLines = 1
         )
 
         BadgesRow(
-            modifier = Modifier.padding(start = 8.dp, end = 16.dp),
             badges = user.badges
         )
     }

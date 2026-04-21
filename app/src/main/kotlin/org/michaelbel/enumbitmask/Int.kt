@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package org.michaelbel.enumbitmask
 
 inline fun <reified T> Int.mapEnabled(): List<T> where T: Enum<T>, T: Flags {

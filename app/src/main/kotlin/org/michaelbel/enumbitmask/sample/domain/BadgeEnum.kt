@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package org.michaelbel.enumbitmask.sample.domain
 
 import org.michaelbel.enumbitmask.Flags

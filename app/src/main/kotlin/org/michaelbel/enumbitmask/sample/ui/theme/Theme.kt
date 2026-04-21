@@ -1,5 +1,3 @@
-@file:Suppress("UnusedReceiverParameter")
-
 package org.michaelbel.enumbitmask.sample.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -33,11 +31,10 @@ val ColorScheme.amber: Color
 
 @Composable
 fun AppTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
     MaterialTheme(
-        colorScheme = if (darkTheme) darkColorScheme() else lightColorScheme(),
+        colorScheme = if (isSystemInDarkTheme()) darkColorScheme() else lightColorScheme(),
         content = content
     )
 }
