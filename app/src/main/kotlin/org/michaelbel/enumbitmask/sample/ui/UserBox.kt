@@ -3,11 +3,9 @@ package org.michaelbel.enumbitmask.sample.ui
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.ListItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -26,33 +24,35 @@ fun UserBox(
     user: User,
     modifier: Modifier = Modifier
 ) {
-    Row(
-        modifier = modifier
-            .fillMaxWidth()
-            .height(64.dp)
-            .padding(horizontal = 16.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Image(
-            painter = painterResource(UserMapper.mapAvatar(user.avatar)),
-            contentDescription = null,
-            modifier = Modifier
-                .size(56.dp)
-                .clip(CircleShape)
-        )
+    ListItem(
+        headlineContent = {
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(4.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = user.name,
+                    modifier = Modifier.weight(weight = 1F, fill = false),
+                    overflow = TextOverflow.Ellipsis,
+                    maxLines = 1
+                )
 
-        Text(
-            text = user.name,
-            modifier = Modifier.weight(weight = 1F, fill = false),
-            overflow = TextOverflow.Ellipsis,
-            maxLines = 1
-        )
-
-        BadgesRow(
-            badges = user.badges
-        )
-    }
+                BadgesRow(
+                    badges = user.badges
+                )
+            }
+        },
+        modifier = modifier,
+        leadingContent = {
+            Image(
+                painter = painterResource(UserMapper.mapAvatar(user.avatar)),
+                contentDescription = null,
+                modifier = Modifier
+                    .size(56.dp)
+                    .clip(CircleShape)
+            )
+        }
+    )
 }
 
 @Preview(showBackground = true)

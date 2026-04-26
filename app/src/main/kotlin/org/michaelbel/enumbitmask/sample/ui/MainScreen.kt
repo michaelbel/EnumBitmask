@@ -4,11 +4,9 @@ package org.michaelbel.enumbitmask.sample.ui
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.displayCutout
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -76,7 +74,7 @@ fun MainScreen(
         floatingActionButtonPosition = if (isPortrait) FabPosition.Center else FabPosition.End
     ) { innerPadding ->
         LazyColumn(
-            contentPadding = innerPadding,
+            contentPadding = innerPadding
         ) {
             items(
                 items = usersList,
