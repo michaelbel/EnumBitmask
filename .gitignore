@@ -1,8 +1,7 @@
-.kotlin
-.gradle
-.idea
-.claude
-build
-build-cache
-generated
+.gradle/
+.idea/
+.kotlin/
+.claude/
+build/
+
 local.properties
