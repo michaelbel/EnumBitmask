@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.ListItem
+import androidx.compose.material3.ListItemDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -51,7 +53,10 @@ fun UserBox(
                     .size(56.dp)
                     .clip(CircleShape)
             )
-        }
+        },
+        colors = ListItemDefaults.colors().copy(
+            containerColor = MaterialTheme.colorScheme.background
+        ),
     )
 }
 

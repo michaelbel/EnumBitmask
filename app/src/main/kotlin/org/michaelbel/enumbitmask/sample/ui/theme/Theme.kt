@@ -33,8 +33,19 @@ val ColorScheme.amber: Color
 fun AppTheme(
     content: @Composable () -> Unit
 ) {
+    val darkColorScheme = darkColorScheme().copy(
+        background = Color(0xFF000000),
+        secondary = Color(0xFF0D0D0D),
+        surfaceContainerHighest = Color(0xFF212121)
+    )
+    val lightColorScheme = lightColorScheme().copy(
+        background = Color(0xFFF0F0F0),
+        secondary = Color(0xFFF8F8F8),
+        surfaceContainerHighest = Color(0xFFFFFFFF)
+    )
+
     MaterialTheme(
-        colorScheme = if (isSystemInDarkTheme()) darkColorScheme() else lightColorScheme(),
+        colorScheme = if (isSystemInDarkTheme()) darkColorScheme else lightColorScheme,
         content = content
     )
 }
